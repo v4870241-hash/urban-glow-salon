@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Urban Glow Salon | Luxury Hair & Beauty</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+    --bg:#0b0b0b;
+    --card:#151515;
+    --gold:#d6b36a;
+    --gold2:#f0d18b;
+    --white:#f8f5ed;
+    --muted:#aaa;
+    --border:rgba(214,179,106,.22);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(11,11,11,.9);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-btn{
+    background:var(--gold);
+    color:#111;
+    padding:11px 18px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:13px;
+}
+
+.menu{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+    padding-top:76px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.badge{
+    display:inline-block;
+    color:var(--gold2);
+    border:1px solid var(--border);
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,8vw,88px);
+    line-height:1.02;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:#d0d0d0;
+    max-width:560px;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 22px;
+    border-radius:30px;
+    border:1px solid var(--gold);
+    cursor:pointer;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#111;
+}
+
+.btn-primary:hover{
+    background:var(--gold2);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    color:var(--white);
+}
+
+.btn-outline:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+/* STATS */
+
+.stats{
+    border-bottom:1px solid var(--border);
+    border-top:1px solid var(--border);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    text-align:center;
+    padding:25px 10px;
+    border-right:1px solid var(--border);
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat h3{
+    color:var(--gold);
+    font-size:27px;
+}
+
+.stat p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* GENERAL */
+
+section{
+    padding:90px 0;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.section-head h2{
+    font-family:"Playfair Display",serif;
+    font-size:45px;
+    margin-top:8px;
+}
+
+.section-head p{
+    color:var(--muted);
+    max-width:600px;
+    margin:10px auto;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+}
+
+.service-icon{
+    width:50px;
+    height:50px;
+    display:grid;
+    place-items:center;
+    background:rgba(214,179,106,.1);
+    color:var(--gold);
+    border-radius:50%;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.service h3{
+    margin-bottom:8px;
+}
+
+.service p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.price{
+    color:var(--gold2);
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-img{
+    height:520px;
+    border-radius:20px;
+    background:
+    url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+}
+
+.about-text h2{
+    font-family:"Playfair Display",serif;
+    font-size:46px;
+    margin:10px 0 20px;
+}
+
+.about-text p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.check{
+    display:flex;
+    gap:10px;
+    margin:12px 0;
+}
+
+.check i{
+    color:var(--gold);
+}
+
+/* GALLERY */
+
+.gallery-filter{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:none;
+    color:#ddd;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:260px;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+    position:relative;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* REVIEWS */
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:var(--card);
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+
+.stars{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.review p{
+    color:#ccc;
+    font-size:14px;
+}
+
+.reviewer{
+    margin-top:20px;
+    font-weight:bold;
+}
+
+/* CALCULATOR */
+
+.calculator{
+    max-width:700px;
+    margin:auto;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:20px;
+}
+
+.option{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    padding:17px 0;
+}
+
+.option label{
+    cursor:pointer;
+}
+
+.option input{
+    accent-color:var(--gold);
+    width:18px;
+    height:18px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+    font-size:22px;
+}
+
+.total strong{
+    color:var(--gold);
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:20px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    margin:22px 0;
+}
+
+.contact-item i{
+    color:var(--gold);
+    font-size:20px;
+    width:25px;
+}
+
+.contact-item p{
+    color:var(--muted);
+}
+
+.map{
+    min-height:350px;
+    border-radius:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1524666041070-9e58e4660d0c?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+    display:grid;
+    place-items:center;
+}
+
+.map span{
+    background:#111;
+    padding:15px 22px;
+    border-radius:30px;
+    border:1px solid var(--gold);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+}
+
+.footer-flex{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+}
+
+.socials a{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--border);
+    border-radius:50%;
+    color:var(--gold);
+}
+
+.copyright{
+    color:#777;
+    font-size:13px;
+    margin-top:20px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(500px,100%);
+    background:#151515;
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-box h2{
+    font-family:"Playfair Display",serif;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    background:#0c0c0c;
+    color:white;
+    border:1px solid #333;
+    padding:13px;
+    border-radius:9px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+}
+
+/* LIGHTBOX */
+
+.lightbox img{
+    max-width:95vw;
+    max-height:85vh;
+    border-radius:15px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:grid;
+    place-items:center;
+    font-size:27px;
+    z-index:900;
+    box-shadow:0 5px 25px rgba(0,0,0,.4);
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#101010;
+        flex-direction:column;
+        padding:20px;
+        display:none;
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .services-grid,
+    .reviews{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-img{
+        height:350px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .section-head h2,
+    .about-text h2{
+        font-size:36px;
+    }
+
+    .services-grid,
+    .reviews,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item{
+        height:300px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat{
+        padding:18px 5px;
+    }
+
+    .calculator{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container nav">
+
+<a href="#" class="logo">Urban <span>Glow</span></a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="#contact" class="nav-btn">Book Appointment</a>
+
+<div class="menu" id="menu">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+
+<div class="badge">PREMIUM HAIR & BEAUTY SALON</div>
+
+<h1>Beauty that makes you feel <span>extraordinary.</span></h1>
+
+<p>
+Experience premium hair, beauty and styling services
+in a luxurious and relaxing environment.
+</p>
+
+<div class="buttons">
+<button class="btn btn-primary" onclick="openModal()">
+<i class="fa-regular fa-calendar"></i>
+Book Appointment
+</button>
+
+<a href="#services" class="btn btn-outline">
+Explore Services
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+<div class="container stats-grid">
+
+<div class="stat">
+<h3>8+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>5K+</h3>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat">
+<h3>25+</h3>
+<p>Beauty Services</p>
+</div>
+
+<div class="stat">
+<h3>4.9★</h3>
+<p>Average Rating</p>
+</div>
+
+</div>
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">What We Do</div>
+<h2>Our Services</h2>
+<p>
+Professional beauty services designed around your personal style.
+</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+<h3>Haircut & Styling</h3>
+<p>Modern cuts, styling and personalised consultations.</p>
+<div class="price">₹499+</div>
+</div>
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+<h3>Hair Color</h3>
+<p>Premium colouring, highlights and creative styles.</p>
+<div class="price">₹1,499+</div>
+</div>
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+<h3>Facial & Skin</h3>
+<p>Relaxing facials and skincare treatments.</p>
+<div class="price">₹799+</div>
+</div>
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+<h3>Manicure</h3>
+<p>Clean, polished and beautiful hands.</p>
+<div class="price">₹499+</div>
+</div>
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+<h3>Bridal Makeup</h3>
+<p>Complete bridal looks for your special day.</p>
+<div class="price">₹7,999+</div>
+</div>
+
+<div class="service">
+<div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+<h3>Groom Styling</h3>
+<p>Sharp grooming packages for weddings and events.</p>
+<div class="price">₹1,999+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container about-grid">
+
+<div class="about-img"></div>
+
+<div class="about-text">
+<div class="eyebrow">About Urban Glow</div>
+
+<h2>Your style. Your confidence.</h2>
+
+<p>
+At Urban Glow Salon, we believe beauty is personal.
+Our experienced stylists combine modern techniques
+with personalised attention to create a look you'll love.
+</p>
+
+<div class="check">
+<i class="fa-solid fa-check"></i>
+<span>Professional & experienced stylists</span>
+</div>
+
+<div class="check">
+<i class="fa-solid fa-check"></i>
+<span>Premium quality products</span>
+</div>
+
+<div class="check">
+<i class="fa-solid fa-check"></i>
+<span>Relaxing luxury environment</span>
+</div>
+
+<div class="check">
+<i class="fa-solid fa-check"></i>
+<span>Personalised consultations</span>
+</div>
+
+<br>
+
+<button class="btn btn-primary" onclick="openModal()">
+Book Your Visit
+</button>
+
+</div>
+</div>
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Our Work</div>
+<h2>Style Gallery</h2>
+<p>Some of our latest looks and transformations.</p>
+</div>
+
+<div class="gallery-filter">
+<button class="filter active" onclick="filterGallery('all',this)">All</button>
+<button class="filter" onclick="filterGallery('hair',this)">Hair</button>
+<button class="filter" onclick="filterGallery('beauty',this)">Beauty</button>
+<button class="filter" onclick="filterGallery('makeup',this)">Makeup</button>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item hair">
+<img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+<div class="gallery-item beauty">
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+<div class="gallery-item makeup">
+<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+<div class="gallery-item hair">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+<div class="gallery-item beauty">
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+<div class="gallery-item makeup">
+<img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=900&q=80" onclick="showImage(this.src)">
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Testimonials</div>
+<h2>What Clients Say</h2>
+</div>
+
+<div class="reviews">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"Absolutely loved my haircut. The stylist understood exactly
+what I wanted. The salon looks beautiful too!"
+</p>
+<div class="reviewer">— Priya S.</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"Got my bridal makeup here and everything was perfect.
+The team was professional and very friendly."
+</p>
+<div class="reviewer">— Neha R.</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"One of the best salons I've visited. Great service,
+clean place and amazing results."
+</p>
+<div class="reviewer">— Riya M.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PRICE CALCULATOR -->
+
+<section>
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Plan Your Visit</div>
+<h2>Price Calculator</h2>
+<p>Select your services to estimate your total.</p>
+</div>
+
+<div class="calculator">
+
+<div class="option">
+<label for="haircut">Haircut & Styling — ₹499</label>
+<input type="checkbox" id="haircut" value="499" onchange="calculate()">
+</div>
+
+<div class="option">
+<label for="color">Hair Color — ₹1,499</label>
+<input type="checkbox" id="color" value="1499" onchange="calculate()">
+</div>
+
+<div class="option">
+<label for="facial">Facial — ₹799</label>
+<input type="checkbox" id="facial" value="799" onchange="calculate()">
+</div>
+
+<div class="option">
+<label for="mani">Manicure — ₹499</label>
+<input type="checkbox" id="mani" value="499" onchange="calculate()">
+</div>
+
+<div class="option">
+<label for="makeup">Makeup — ₹2,499</label>
+<input type="checkbox" id="makeup" value="2499" onchange="calculate()">
+</div>
+
+<div class="total">
+<span>Estimated Total</span>
+<strong id="total">₹0</strong>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Visit Us</div>
+<h2>Let's Get You Glowing</h2>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<div class="contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<div>
+<strong>Address</strong>
+<p>123 Main Street, Your City, India</p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<div>
+<strong>Phone</strong>
+<p>+91 98765 43210</p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fa-regular fa-clock"></i>
+<div>
+<strong>Opening Hours</strong>
+<p>Mon – Sun: 10:00 AM – 9:00 PM</p>
+</div>
+</div>
+
+<button class="btn btn-primary" onclick="openModal()">
+Book Appointment
+</button>
+
+</div>
+
+<div class="map">
+<span>
+<i class="fa-solid fa-location-dot"></i>
+&nbsp; Find Us on Google Maps
+</span>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<div class="footer-flex">
+
+<div>
+<div class="logo">Urban <span>Glow</span></div>
+<p style="color:#777;margin-top:7px;">
+Luxury hair & beauty salon.
+</p>
+</div>
+
+<div class="socials">
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
+</div>
+
+<div class="copyright">
+
+  
