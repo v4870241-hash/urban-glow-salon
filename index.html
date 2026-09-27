@@ -1154,5 +1154,140 @@ Luxury hair & beauty salon.
 </div>
 
 <div class="copyright">
+© 2026 Urban Glow Salon. All rights reserved.
+</div>
+</div>
+</footer>
 
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal">
+    <div class="modal-box">
+        <div class="close" onclick="closeModal()">×</div>
+
+        <h2>Book Appointment</h2>
+
+        <form onsubmit="submitBooking(event)">
+            <div class="form-group">
+                <input id="name" type="text" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <input id="phone" type="tel" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option>Haircut & Styling</option>
+                    <option>Hair Color</option>
+                    <option>Facial & Skin</option>
+                    <option>Manicure</option>
+                    <option>Bridal Makeup</option>
+                    <option>Groom Styling</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input id="date" type="date" required>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" rows="3" placeholder="Additional message"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Confirm Booking
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div class="modal lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Salon work">
+</div>
+
+<script>
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+if (menu && navLinks) {
+    menu.addEventListener("click", function() {
+        navLinks.classList.toggle("show");
+    });
+}
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("show");
+    });
+});
+
+function openModal() {
+    document.getElementById("bookingModal").classList.add("show");
+}
+
+function closeModal() {
+    document.getElementById("bookingModal").classList.remove("show");
+}
+
+function submitBooking(event) {
+    event.preventDefault();
+    alert("Demo booking received! This is a demo website.");
+    closeModal();
+}
+
+function calculate() {
+    const ids = ["haircut", "color", "facial", "mani", "makeup"];
+    let total = 0;
+
+    ids.forEach(function(id) {
+        const element = document.getElementById(id);
+        if (element && element.checked) {
+            total += Number(element.value);
+        }
+    });
+
+    const totalElement = document.getElementById("total");
+
+    if (totalElement) {
+        totalElement.innerText = "₹" + total.toLocaleString("en-IN");
+    }
+}
+
+function filterGallery(category, button) {
+    document.querySelectorAll(".filter").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".gallery-item").forEach(function(item) {
+        if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+function showImage(src) {
+    document.getElementById("lightboxImg").src = src;
+    document.getElementById("lightbox").classList.add("show");
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").classList.remove("show");
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+        closeLightbox();
+    }
+});
+</script>
+
+</body>
+</html>
   
